@@ -1,3 +1,8 @@
-# docker-rust-hello
+# rust-backend-aws
 
-A simple Rust server/microservice example for [Docker's Rust Language Guide](https://docs.docker.com/language/rust/).
+## Dockerise
+
+```
+docker build -t rust-backend-aws .
+docker run -p 8000:8000 --rm rust-backend-aws
+```
