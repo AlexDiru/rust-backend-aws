@@ -35,9 +35,11 @@ jobs:
 
       - name: Extract metadata for the Docker image
         id: meta
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.IMAGE_NAME }}
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
