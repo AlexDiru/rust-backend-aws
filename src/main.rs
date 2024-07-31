@@ -11,6 +11,11 @@ fn index() -> &'static str {
     "Hello, Docker!"
 }
 
+#[get("/foo")]
+fn foo() -> &'static str {
+    "Foobar!"
+}
+
 #[get("/word-stream")]
 fn word_stream() -> TextStream![String] {
     TextStream! {
@@ -26,5 +31,5 @@ fn word_stream() -> TextStream![String] {
 #[launch]
 fn rocket() -> _ {
     rocket::build()
-        .mount("/", routes![index, word_stream])
+        .mount("/", routes![index, word_stream, foo])
 }
