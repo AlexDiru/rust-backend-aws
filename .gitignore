@@ -1,2 +1,6 @@
 /target
 .idea/
+.terraform
+*.tfstate
+*.backup
+.terraform.lock.hcl
